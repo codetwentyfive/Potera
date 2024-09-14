@@ -1,27 +1,89 @@
+/* app/globals.css */
+
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom global styles */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-gray-800;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-800;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+.section {
+  @apply py-16;
+  scroll-margin-top: 80px; /* Adjust this value based on your header height */
+  
+}
+
+.bg-light-gray {
+  @apply bg-gray-50;
+}
+
+.btn {
+  @apply inline-block px-6 py-3 rounded-full font-semibold transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 shadow-md;
+}
+
+.btn-secondary {
+  @apply border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-md;
+}
+
+.btn:hover {
+  @apply transform scale-105;
+}
+
+/* Shadows for buttons */
+.shadow-md {
+  @apply shadow-lg;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  @apply bg-blue-100 flex items-center justify-center py-16;
+}
+
+.hero-section .container {
+  @apply mx-auto flex flex-col md:flex-row items-center justify-between px-4;
+}
+
+.hero-section h1 {
+  @apply text-4xl md:text-5xl font-bold mb-4;
+}
+
+.hero-section p {
+  @apply text-lg md:text-xl mb-6;
+}
+
+.hero-section .btn {
+  @apply mb-4 md:mb-0;
+}
+
+.hero-section .btn + .btn {
+  @apply md:ml-4;
+}
+
+.hero-section img {
+  @apply mt-8 md:mt-0 rounded-lg;
 }
