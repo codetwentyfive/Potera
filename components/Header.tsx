@@ -57,7 +57,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden bg-white fixed top-0 left-0 w-full h-full z-20 flex flex-col items-center justify-start pt-16 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`md:hidden bg-white fixed top-0 left-0 w-full h-full z-20 flex flex-col items-center justify-start pt-20 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <ul className="space-y-6 text-center">
             {navItems.map((item) => (
               <li key={item.href}>
