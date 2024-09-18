@@ -29,7 +29,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section id="services" className="py-12 section">
       <div className="container mx-auto ">
-        <h2 className="text-4xl font-bold text-center mb-12">Unsere Dienstleistungen</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Unsere Dienstleistungen</h2>
         <div className="flex flex-wrap -mx-4 justify-center">
           {services.map((service) => (
             <div key={service.title} className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
@@ -38,9 +38,9 @@ const ServicesSection: React.FC = () => {
                   <div className="w-12 h-12 mr-4">
                     <Image src={service.icon} alt={service.title} width={48} height={48} />
                   </div>
-                  <h3 className="text-2xl font-semibold">{service.title}</h3>
+                  <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
                 </div>
-                <p className="mb-6">{service.description}</p>
+                <p className="mb-6 text-white">{service.description}</p>
                 <Link href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`} className="btn btn-secondary bg-white text-blue-600">
                   Mehr erfahren
                 </Link>
