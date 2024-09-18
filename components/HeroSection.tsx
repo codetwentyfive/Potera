@@ -7,7 +7,6 @@ const HeroSection: React.FC = () => {
         <section id="hero"className="relative flex items-center justify-center py-16 pt-32">
       {/* Background Image */}
       <div className="absolute inset-0  ">
-        <Image src="/images/hero-bg.jpg" alt="Cleaning Background" layout="fill" objectFit="cover" quality={80} />
         <div className="absolute inset-0 bg-[#45b0e5] "></div>
       </div>
       {/* Content */}
@@ -15,7 +14,7 @@ const HeroSection: React.FC = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left p-4 space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-white leading-tight">
-            Über ?? Jahre Erfahrung im Reinigungsservice
+            Über 25 Jahre Erfahrung im Reinigungsservice
           </h1>
           <p className="text-lg md:text-xl mb-6">
             Wir bieten professionelle Reinigungsdienste für Ihr Zuhause und Büro mit Fokus auf Qualität und Kundenzufriedenheit.
