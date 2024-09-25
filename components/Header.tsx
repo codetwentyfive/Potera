@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileMenu from './MobileMenu';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -76,7 +77,7 @@ const Header: React.FC = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="bg-white shadow fixed w-full z-50">
+    <header className="bg-white shadow fixed top-0 w-full z-50">
       <nav className="container mx-auto py-2 px-4">
         <div className="flex items-center justify-between">
           {/* Left Section: Hamburger Menu on Mobile, Logo on Desktop */}
@@ -163,44 +164,11 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          id="mobile-menu"
-          ref={mobileMenuRef}
-          tabIndex={-1}
-          className={`md:hidden bg-white fixed top-0 left-0 w-full h-full z-40 flex flex-col items-center justify-start pt-16 ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-300 ease-in-out focus:outline-none`}
-        >
-          <ul className="space-y-6 text-center mt-16">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-gray-700 text-lg hover:text-blue-600 transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 space-y-4 text-center">
-            <Link
-              href="/estimate"
-              className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300 w-48 block"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Kostenlose Schätzung
-            </Link>
-            <Link
-              href="/book"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300 w-48 block"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Jetzt Buchen
-            </Link>
-          </div>
-        </div>
+        <MobileMenu
+          navItems={navItems}
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        />
       </nav>
     </header>
   );
