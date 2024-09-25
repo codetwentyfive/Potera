@@ -21,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ navItems, isOpen, onClose }) =>
           <li key={item.href}>
             <Link
               href={item.href}
-              className="text-gray-700 text-lg hover:text-blue-600 transition-colors duration-300"
+              className="link-item text-gray-700 text-lg hover:text-blue-600 transition-colors duration-300"
               onClick={onClose}
             >
               {item.label}
@@ -29,7 +29,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ navItems, isOpen, onClose }) =>
           </li>
         ))}
       </ul>
-      <div className="mt-8 space-y-4 text-center">
+   {/*    <div className="mt-8 space-y-4 text-center">
         <Link
           href="/estimate"
           className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300 w-48 block"
@@ -44,7 +44,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ navItems, isOpen, onClose }) =>
         >
           Jetzt Buchen
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
