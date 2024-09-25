@@ -80,8 +80,21 @@ const Header: React.FC = () => {
     <header className="bg-white shadow fixed top-0 w-full z-50">
       <nav className="container mx-auto py-2 px-4">
         <div className="flex items-center justify-between">
+
+          {/* Center Section: Logo on Mobile */}
+          <div className="flex-1 flex pl-4 md:hidden ">
+            <Link href="/#hero" className="flex items-center">
+              <Image
+                src="/images/logo.svg"
+                alt="Potera"
+                width={60}
+                height={60}
+              />
+            </Link>
+          </div>
+
           {/* Left Section: Hamburger Menu on Mobile, Logo on Desktop */}
-          <div className="flex items-center">
+          <div className="flex items-center p-2">
             {/* Hamburger Menu Button */}
             <button
               onClick={toggleMobileMenu}
@@ -118,18 +131,6 @@ const Header: React.FC = () => {
                 alt="Potera"
                 width={80}
                 height={80}
-              />
-            </Link>
-          </div>
-
-          {/* Center Section: Logo on Mobile */}
-          <div className="flex-1 flex justify-center md:hidden pr-5">
-            <Link href="/#hero" className="flex items-center">
-              <Image
-                src="/images/logo.svg"
-                alt="Potera"
-                width={60}
-                height={60}
               />
             </Link>
           </div>
