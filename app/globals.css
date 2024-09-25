@@ -102,3 +102,44 @@ p {
 	border-right: 5px solid #f7dc16;
   
 }
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out forwards; 
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.8s ease-out forwards; 
+}
+
+
+
+.link-item {
+  @apply transition-transform duration-300; /* Smooth transition */
+}
+
+.link-item:hover {
+  @apply transform scale-110; /* Scale up on hover */
+}
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
