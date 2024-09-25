@@ -12,8 +12,8 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto relative  flex flex-col md:flex-row items-center justify-center px-4">
         {/* Text Content */}
-        <div className="w-full md:w-1/2 text-center md:text-left p-4 space-y-6">
-          <h1 className="headline text-4xl md:text-5xl font-bold  text-white leading-tight">
+        <div className="w-full md:w-1/2 text-center md:text-left p-4 space-y-6 animate-slide-in-left">
+          <h1 className="headline text-4xl md:text-5xl font-bold  text-white leading-tight ">
             Über 25 Jahre Erfahrung im Reinigungs<br className="md:hidden"  />service {/* Added line break for smaller screens */}
           </h1>
           <p className="text-lg md:text-xl mb-6">
@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className="mt-8 md:mt-0  flex justify-center items-center md:ml-2">
+        <div className="mt-8 md:mt-0  flex justify-center items-center md:ml-2 animate-slide-in-right">
           <Image
             src="/images/cleaning-team.png"
             alt="Cleaning Team"
