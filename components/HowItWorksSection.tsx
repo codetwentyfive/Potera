@@ -21,7 +21,7 @@ const steps = [
 
 const HowItWorksSection: React.FC = () => {
   return (
-    <section className="section w-full py-12 bg-light-gray">
+    <section className="section w-full py-12 bg-light-gray border-4"> 
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-12">So funktioniert es</h2>
         <div className="flex flex-col md:flex-row justify-center items-start md:space-x-12 px-6">
