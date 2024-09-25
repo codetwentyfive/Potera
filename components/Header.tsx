@@ -147,7 +147,7 @@ const Header: React.FC = () => {
               ))}
             </ul>
             {/* Call-to-Action Buttons */}
-            <div className="flex space-x-4">
+        {/*     <div className="flex space-x-4">
               <Link
                 href="/estimate"
                 className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors duration-300"
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
               >
                 Jetzt Buchen
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
 
