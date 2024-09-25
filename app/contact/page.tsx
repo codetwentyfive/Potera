@@ -42,11 +42,11 @@ const ContactPage: React.FC = () => {
           {/* Subheadline Text */}
           <div className="mb-6 bg-white/10 backdrop-blur-md p-4 rounded-lg">
             <p className='text-white pt-2 '>
-              Haben Sie Fragen zu unserem Angebot? Wir sind gerne für
+              Haben Sie Fragen zu unserem Angebot? <br />Wir sind gerne für
               Sie da. <br /> Füllen Sie einfach das Kontaktformular aus, und wir
               setzen uns zeitnah mit Ihnen in Verbindung. <br /> Natürlich
               können Sie uns auch telefonisch erreichen oder Sie
-              besuchen uns direkt vor Ort <br /> <br /> – wir freuen uns auf Sie!
+              besuchen uns direkt vor Ort <br /> – wir freuen uns auf Sie!
             </p>
           </div>
 
