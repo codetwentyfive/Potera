@@ -13,8 +13,8 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto relative  flex flex-col md:flex-row items-center justify-center px-4">
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left p-4 space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-white leading-tight">
-            Über 25 Jahre Erfahrung im Reinigungsservice
+          <h1 className="headline text-4xl md:text-5xl font-bold  text-white leading-tight">
+            Über 25 Jahre Erfahrung im Reinigungs<br className="md:hidden"  />service {/* Added line break for smaller screens */}
           </h1>
           <p className="text-lg md:text-xl mb-6">
             Wir bieten professionelle Reinigungsdienste für Ihr Zuhause und Büro mit Fokus auf Qualität und Kundenzufriedenheit.
