@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
+import {
+  PhoneIcon,
+  MailIcon,
+  PrinterIcon,
+} from '@heroicons/react/outline';
 
 const ContactPage: React.FC = () => {
   // Form state
@@ -18,60 +23,140 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <section className="py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
-      <div className="max-w-md mx-auto">
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          {/* Name Field */}
+    <section
+      className="container mx-auto w-full py-16"
+      style={{
+        background: 'linear-gradient(to left, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 0.8)), url(/images/bg-contact.jpg)', // Gradient with background image
+        backgroundSize: 'cover', // Cover the entire section
+        backgroundPosition: 'center', // Center the image
+      }}
+    >
+      <div className="flex flex-wrap justify-center items-center text-white">
+        {/* Left Column */}
+        <div className="w-full lg:w-1/2 px-4">
+          {/* Headline */}
+          <div className=" headline mb-8">
+            <h1 className="text-4xl font-bold text-white">Kontaktieren Sie uns</h1>
+          </div>
+
+          {/* Subheadline Text */}
+          <div className="mb-6 ">
+            <p className='text-white'>
+              Haben Sie Fragen zu unserem Angebot? Wir sind gerne für
+              Sie da. Füllen Sie einfach das Kontaktformular aus, und wir
+              setzen uns zeitnah mit Ihnen in Verbindung. Natürlich
+              können Sie uns auch telefonisch erreichen oder Sie
+              besuchen uns direkt vor Ort – wir freuen uns auf Sie!
+            </p>
+          </div>
+
+          {/* Office Hours */}
+          <div className="mb-8">
+            <div className="font-semibold">Bürozeiten</div>
+            <div className="flex mt-2 ">
+              <ul className="mr-8">
+                <li>Mo – Do.</li>
+                <li>Freitag</li>
+                <li>Sa – So.</li>
+              </ul>
+              <ul>
+                <li>8:00 – 15:30</li>
+                <li>8:00 – 13:30</li>
+                <li>Geschlossen</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col mb-8" >
+            <p className="mr-8 mb-4 text-white">
+              <a className="flex items-center" href="tel:+492022548333">
+                <PhoneIcon className="h-5 w-5 text-white mr-2" />
+                +49 123 456 789 23
+              </a>
+            </p>
+            <p className="mr-8 mb-4 flex items-center text-white">
+              <PrinterIcon className="h-5 w-5 text-white mr-2" />
+              +49 123 456 789
+            </p>
+            <p className="mb-4">
+              <a
+                className="flex items-center text-white"
+                href="mailto:mailto@mittler-gmbh.de"
+              >
+                <MailIcon className="h-5 w-5  mr-2 text-white" />
+                potera@reinigung.de
+              </a>
+            </p>
+          </div>
+
+          {/* Contact Form */}
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* Name Field */}
+            <div>
+              <label className="block mb-2 text-sm font-medium">Name</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300 p-3 rounded"
+                placeholder="Ihr Name"
+                required
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
+            </div>
+
+            {/* Email Field */}
+            <div>
+              <label className="block mb-2 text-sm font-medium">Email</label>
+              <input
+                type="email"
+                className="w-full border border-gray-300 p-3 rounded"
+                placeholder="Ihre Email"
+                required
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
+            </div>
+
+            {/* Message Field */}
+            <div>
+              <label className="block mb-2 text-sm font-medium">Nachricht</label>
+              <textarea
+                className="w-full border border-gray-300 p-3 rounded"
+                placeholder="Ihre Nachricht"
+                rows={4}
+                required
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white p-3 rounded"
+            >
+              Nachricht abschicken
+            </button>
+          </form>
+        </div>
+
+        {/* Right Column */}
+        <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
           <div>
-            <label className="block mb-2 text-sm font-medium">Name</label>
-            <input
-              type="text"
-              className="w-full border border-gray-300 p-3 rounded"
-              placeholder="Your Name"
-              required
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
+            <img
+              src="https://mittler-gmbh.de/wp-content/uploads/2021/09/mittler-gebaeudereinigung-kontakt.jpg"
+              alt="Kontakt Bild"
+              className="w-full h-auto rounded"
             />
           </div>
-          {/* Email Field */}
-          <div>
-            <label className="block mb-2 text-sm font-medium">Email</label>
-            <input
-              type="email"
-              className="w-full border border-gray-300 p-3 rounded"
-              placeholder="Your Email"
-              required
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-            />
-          </div>
-          {/* Message Field */}
-          <div>
-            <label className="block mb-2 text-sm font-medium">Message</label>
-            <textarea
-              className="w-full border border-gray-300 p-3 rounded"
-              placeholder="Your Message"
-              rows={4}
-              required
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-            ></textarea>
-          </div>
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-green-600 text-white p-3 rounded"
-          >
-            Send Message
-          </button>
-        </form>
+        </div>
       </div>
     </section>
   );
