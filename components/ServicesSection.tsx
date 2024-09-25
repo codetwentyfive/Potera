@@ -34,8 +34,8 @@ const ServicesSection: React.FC = () => {
           {services.map((service) => (
             <div key={service.title} className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
               <div className="bg-blue-600 text-white p-8 rounded-lg shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 mr-4">
+                <div className="flex items-center mb-4 headline">
+                  <div className="w-12 h-12 mr-4 pl-1">
                     <Image src={service.icon} alt={service.title} width={48} height={48} />
                   </div>
                   <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
