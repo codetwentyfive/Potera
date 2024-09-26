@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <h2 className="text-3xl font-bold">
           Lassen Sie Ihr Zuhause reinigen. Es ist einfach und erschwinglich.
         </h2>
-        <Link href="/quote" className="btn btn-secondary bg-white text-blue-600">
+        <Link href="/contact" className="btn btn-secondary bg-white text-blue-600">
           Angebot einholen
         </Link>
         <div className="flex justify-center items-center space-x-4">
