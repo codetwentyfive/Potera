@@ -88,7 +88,6 @@ p {
   @apply mt-8 md:mt-0 rounded-lg;
 }
 .headline {
-	color: #FFF;
 	position: relative;
 	z-index: 10;
 	transition: all 0.3s linear;
@@ -96,7 +95,6 @@ p {
   
 }
 .headline-right {
-	color: #FFF;
   padding-left: 5px;
 	transition: all 0.3s linear;
 	border-right: 5px solid #f7dc16;
