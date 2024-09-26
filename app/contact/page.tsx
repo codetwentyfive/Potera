@@ -31,7 +31,7 @@ const ContactPage: React.FC = () => {
         backgroundPosition: 'center', // Center the image
       }}
     >
-      <div className="flex flex-wrap justify-center items-center text-white">
+      <div className="flex flex-wrap justify-center items-center ">
         {/* Left Column */}
         <div className="w-full lg:w-1/2 px-4">
           {/* Headline */}
@@ -51,7 +51,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Office Hours */}
-          <div className="mb-8">
+          <div className="mb-8 text-white">
             <div className="font-bold headline pl-2">Bürozeiten:</div>
             <div className="flex mt-1 ">
               <ul className="mr-8">
@@ -94,7 +94,7 @@ const ContactPage: React.FC = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Name Field */}
             <div>
-              <label className="block mb-2 text-sm font-medium">Name</label>
+              <label className="block mb-2 text-sm font-medium text-white">Name</label>
               <input
                 type="text"
                 className="w-full border border-gray-300 p-3 rounded"
@@ -109,7 +109,7 @@ const ContactPage: React.FC = () => {
 
             {/* Email Field */}
             <div>
-              <label className="block mb-2 text-sm font-medium">Email</label>
+              <label className="block mb-2 text-sm font-medium text-white">Email</label>
               <input
                 type="email"
                 className="w-full border border-gray-300 p-3 rounded"
@@ -124,7 +124,7 @@ const ContactPage: React.FC = () => {
 
             {/* Message Field */}
             <div>
-              <label className="block mb-2 text-sm font-medium">Nachricht</label>
+              <label className="block mb-2 text-sm font-medium text-white">Nachricht</label>
               <textarea
                 className="w-full border border-gray-300 p-3 rounded"
                 placeholder="Ihre Nachricht"
