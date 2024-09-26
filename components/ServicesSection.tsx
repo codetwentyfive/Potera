@@ -1,59 +1,64 @@
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { GiMagicBroom } from "react-icons/gi";
 
 interface Service {
   title: string;
   slug: string;
   description: string;
-  icon: string;
+  icon: JSX.Element | string; // Allow both JSX (react-icons) and string (image path)
 }
 
 const services: Service[] = [
   {
-    title: "Hausreinigung",
-    slug: "hausreinigung",
+    title: "Unterhaltsreinigung",
+    slug: "unterhaltsreinigung",
     description:
-      "Halten Sie Ihr Zuhause mit unseren professionellen Hausreinigungsdiensten makellos.",
-    icon: "/icons/house-cleaning.svg",
+      "Sauberkeit und Zuverlassigkeit. Unser Unterhaltsservice sorgt für glänzende Ergebnisse, Tag für Tag!",
+    icon: <GiMagicBroom className=" w-12 h-12 text-black" />, 
   },
   {
     title: "Büroreinigung",
     slug: "bueroreinigung",
     description:
       "Erhalten Sie eine saubere und produktive Arbeitsumgebung mit unserer Büroreinigung.",
-    icon: "/icons/office-cleaning.svg",
+    icon: "/icons/office-cleaning.svg", // Image path
   },
   {
     title: "Fassadenreinigung",
     slug: "fassadenreinigung",
     description:
       "Reinigen und pflegen Sie die Außenflächen Ihres Gebäudes für einen erstklassigen Eindruck.",
-    icon: "/icons/facade-cleaning.svg",
+    icon: "/icons/facade-cleaning.svg", // Image path
   },
-  {
+/*   {
     title: "Wäscheservice",
     slug: "waescheservice",
     description: "Wir bieten bequeme Wäscheservices, um Ihnen Zeit zu sparen.",
-    icon: "/icons/laundry-service.svg",
-  },
+    icon: "/icons/laundry-service.svg", // Image path
+  }, */
 ];
 
 // ServiceCard Component
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-      <div className="bg-blue-600 text-white p-8 rounded-lg shadow-lg flex flex-col h-full">
+      <div className="bg-blue-600 text-white p-8 rounded-lg shadow-lg flex flex-col h-full ">
         <div className="flex items-center mb-4">
-          <div className="w-12 h-12 mr-4">
-            <Image
-              src={service.icon}
-              alt={service.title}
-              width={48}
-              height={48}
-              className="object-contain"
-            />
+          <div className="w-12 h-12 mr-2">
+            {/* Conditionally render react-icon or image */}
+            {typeof service.icon === "string" ? (
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            ) : (
+              <div className="text-white text-4xl">{service.icon}</div>
+            )}
           </div>
           <h3 className="text-2xl font-semibold">{service.title}</h3>
         </div>
