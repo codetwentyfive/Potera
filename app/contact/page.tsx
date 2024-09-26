@@ -41,7 +41,7 @@ const ContactPage: React.FC = () => {
 
           {/* Subheadline Text */}
           <div className="mb-6 bg-white/10 backdrop-blur-md p-4 rounded-lg">
-            <p className='text-white pt-2 '>
+            <p className='text-white  '>
               Haben Sie Fragen zu unserem Angebot? <br />Wir sind gerne für
               Sie da. <br /> Füllen Sie einfach das Kontaktformular aus, und wir
               setzen uns zeitnah mit Ihnen in Verbindung. <br /> Natürlich
@@ -151,7 +151,7 @@ const ContactPage: React.FC = () => {
         <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
           <div>
             <img
-              src="https://mittler-gmbh.de/wp-content/uploads/2021/09/mittler-gebaeudereinigung-kontakt.jpg"
+              src="/images/secretary.jpg"
               alt="Kontakt Bild"
               className="w-full h-auto rounded"
             />
