@@ -12,7 +12,7 @@ const AboutUsSection: React.FC = () => {
         </div>
         {/* Text Content */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-12 space-y-6 flex flex-col items-center animate-slide-in-right">
-          <h2 className="text-4xl font-bold text-center">Wir sind anders in der Reinigungsbranche</h2>
+          <h2 className="text-4xl font-bold text-center headline-right text-black">Wir sind anders in der Reinigungsbranche</h2>
           <p className="text-center">
             Bei Potera glauben wir daran, erstklassige Reinigungsdienste mit einer persönlichen Note zu liefern.<br /> Unser Team ist bestrebt, Ihre Räume zum Strahlen zu bringen und gleichzeitig die Kundenzufriedenheit zu gewährleisten.
           </p>
