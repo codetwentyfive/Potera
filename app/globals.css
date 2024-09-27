@@ -130,14 +130,34 @@ p {
   animation: slideInFromRight 0.8s ease-out forwards; 
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
 
 .link-item {
-  @apply transition-transform duration-300; /* Smooth transition */
+  transition: transform 300ms;
 }
 
 .link-item:hover {
-  @apply transform scale-110; /* Scale up on hover */
+  transform: scale(1.1); /* Scale up on hover */
 }
 
 @import '~@fortawesome/fontawesome-free/css/all.css';
