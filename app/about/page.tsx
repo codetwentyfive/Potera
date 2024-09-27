@@ -7,29 +7,28 @@ const AboutPage: React.FC = () => {
   const pictureWheelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = pictureWheelRef.current;
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-rotate');
+            currentRef.classList.add('animate-rotate');
           } else {
-            entry.target.classList.remove('animate-rotate');
+            currentRef.classList.remove('animate-rotate');
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    if (pictureWheelRef.current) {
-      observer.observe(pictureWheelRef.current);
-    }
+    observer.observe(currentRef);
 
     return () => {
-      if (pictureWheelRef.current) {
-        observer.unobserve(pictureWheelRef.current);
-      }
+      observer.unobserve(currentRef);
     };
-  }, []);
+  }, []); // No dependencies needed
 
   const experiences = [
     { year: 2016, company: 'Edeka' },
@@ -119,7 +118,7 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-700">
-                "Potera hat unsere Erwartungen übertroffen. Die Reinigungsqualität ist erstklassig, und das Team ist stets professionell und zuverlässig."
+                &quot;Potera hat unsere Erwartungen übertroffen. Die Reinigungsqualität ist erstklassig, und das Team ist stets professionell und zuverlässig.&quot;
               </p>
             </div>
           ))}
