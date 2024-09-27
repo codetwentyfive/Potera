@@ -6,6 +6,7 @@ import {
   MailIcon,
   PrinterIcon,
 } from '@heroicons/react/outline';
+import Image from 'next/image'; 
 
 const ContactPage: React.FC = () => {
   // Form state
@@ -150,9 +151,11 @@ const ContactPage: React.FC = () => {
         {/* Right Column */}
         <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
           <div>
-            <img
+            <Image
               src="/images/secretary.jpg"
               alt="Kontakt Bild"
+              width={600} 
+              height={400} 
               className="w-full h-auto rounded"
             />
           </div>
