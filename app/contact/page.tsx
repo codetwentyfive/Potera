@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import {
   PhoneIcon,
   MailIcon,
-  PrinterIcon,
+ /*  PrinterIcon, */
 } from '@heroicons/react/outline';
 import Image from 'next/image'; 
 
@@ -73,20 +73,20 @@ const ContactPage: React.FC = () => {
             <p className="mr-8 mb-4 text-white">
               <a className="flex items-center" href="tel:+492022548333">
                 <PhoneIcon className="h-5 w-5 text-white mr-2" />
-                +49 123 456 789 23
+                +49 176 3274 7881
               </a>
             </p>
-            <p className="mr-8 mb-4 flex items-center text-white">
+        {/*     <p className="mr-8 mb-4 flex items-center text-white">
               <PrinterIcon className="h-5 w-5 text-white mr-2" />
               +49 123 456 789
-            </p>
+            </p> */}
             <p className="mb-4">
               <a
                 className="flex items-center text-white"
                 href="mailto:mailto@mittler-gmbh.de"
               >
                 <MailIcon className="h-5 w-5  mr-2 text-white" />
-                potera@reinigung.de
+                kontakt@poterareinigung.de
               </a>
             </p>
           </div>
@@ -167,15 +167,15 @@ const ContactPage: React.FC = () => {
       <div className="text-center mt-8">
         <div className="flex items-center justify-center mt-2">
           <i className="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
-          <h2 className="text-xl font-bold text-white ">Wunschadresse 2,<br className="md:hidden" /> 1234 Ort, Germany</h2>
+          <h2 className="text-xl font-bold text-white ">Blumenstraße. 5,<br className="md:hidden" /> 95326 Kulmbach, Deutschland</h2>
         </div>
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Wunschadresse+2,+1234+Ort,+Germany"
+          href="https://www.google.com/maps/search/?api=1&query=Blumenstraße+5,+95326+Kulmbach,+Germany"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:underline mt-2 inline-block"
         >
-          Größere Karte anzeigen
+          In Google Maps öffnen
         </a>
       </div>
     </section>
