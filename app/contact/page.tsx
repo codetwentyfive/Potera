@@ -152,7 +152,7 @@ const ContactPage: React.FC = () => {
         <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
           <div>
             <Image
-              src="/images/secretary.jpg"
+              src="/images/secretary.png "
               alt="Kontakt Bild"
               width={600} 
               height={400} 
