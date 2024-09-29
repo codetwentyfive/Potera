@@ -16,10 +16,12 @@ const Footer: React.FC = () => {
           Angebot einholen
         </Link>
         <div className="flex flex-col items-center space-y-4 text-black">
+          <p className="text-xl font-bold text-white">Rufen Sie uns an unter:</p>
           <a className="flex items-center" href="tel:+4917632747881">
             <PhoneIcon className="h-5 w-5 mr-2" />
             +49 176 3274 7881
           </a>
+          <p className="text-xl font-bold text-white">oder schreiben Sie uns eine E-Mail:</p>
           <a
             className="flex items-center"
             href="mailto:kontakt@poterareinigung.de"
