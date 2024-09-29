@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
           {/* Contact Info */}
           <div className="flex flex-col mb-8" >
             <p className="mr-8 mb-4 text-white">
-              <a className="flex items-center" href="tel:+492022548333">
+              <a className="flex items-center" href="tel:+4917632747881">
                 <PhoneIcon className="h-5 w-5 text-white mr-2" />
                 +49 176 3274 7881
               </a>
@@ -83,7 +83,7 @@ const ContactPage: React.FC = () => {
             <p className="mb-4">
               <a
                 className="flex items-center text-white"
-                href="mailto:mailto@mittler-gmbh.de"
+                href="mailto:kontakt@poterareinigung.de"
               >
                 <MailIcon className="h-5 w-5  mr-2 text-white" />
                 kontakt@poterareinigung.de

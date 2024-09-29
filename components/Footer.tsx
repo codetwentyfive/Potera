@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { PhoneIcon, MailIcon } from "@heroicons/react/outline";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mt-12">
@@ -10,14 +10,23 @@ const Footer: React.FC = () => {
           Lassen Sie Ihr Zuhause reinigen. Es ist einfach und erschwinglich.
         </h2>
         <Link
-          href="/contact" 
+          href="/contact"
           className="btn btn-secondary bg-white text-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 transition-colors duration-300 inline-block"
         >
           Angebot einholen
         </Link>
-        <div className="flex justify-center items-center space-x-4">
-          <Image src="/icons/phone.svg" alt="Telefon" width={24} height={24} />
-          <p className="text-xl">Rufen Sie uns an unter (123) 456-7890</p>
+        <div className="flex flex-col items-center space-y-4 text-black">
+          <a className="flex items-center" href="tel:+4917632747881">
+            <PhoneIcon className="h-5 w-5 mr-2" />
+            +49 176 3274 7881
+          </a>
+          <a
+            className="flex items-center"
+            href="mailto:kontakt@poterareinigung.de"
+          >
+            <MailIcon className="h-5 w-5  mr-2" />
+            kontakt@poterareinigung.de
+          </a>
         </div>
       </div>
       <div className="bg-gradient-to-r from-blue-700 to-purple-700 p-2">
@@ -37,7 +46,12 @@ const Footer: React.FC = () => {
           </ul>
           {/* Logo in Footer */}
           <div className="mt-4 md:mt-0">
-            <Image src="/icons/logo-footer.svg" alt="Potera" width={60} height={50} />
+            <Image
+              src="/icons/logo-footer.svg"
+              alt="Potera"
+              width={60}
+              height={50}
+            />
           </div>
         </div>
       </div>
