@@ -43,7 +43,7 @@ const services: Service[] = [
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
     <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
-      <div className="bg-blue-600 p-8 rounded-lg shadow-lg flex flex-col h-full relative overflow-hidden group hover:animate-jiggle transition-transform duration-300 ease-in-out hover:scale-105">
+      <div className="bg-blue-600 p-8 rounded-lg shadow-lg flex flex-col h-full relative overflow-hidden group  transition-transform duration-300 ease-in-out hover:scale-105">
         {/* Glass effect background */}
         
         <div className="relative z-10">
