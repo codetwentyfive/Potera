@@ -5,8 +5,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Potera Cleaning Services',
-  description: 'Professional cleaning services for your home and office.',
+  title: 'Potera Gebäudereinigung',
+  description: 'Professionelle Gebäudereinigung.',
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
