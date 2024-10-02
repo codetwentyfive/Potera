@@ -98,30 +98,36 @@ const AboutPage: React.FC = () => {
           ))}
         </div>
       </section>
-
       <section>
-        <h2 className="text-3xl font-bold mb-8 headline pl-2">Zufriedene Kunden</h2>
+        <h2 className="text-3xl font-bold mb-8 headline pl-2">Unser Versprechen</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <Image
-                  src={`/images/customer-${index}.jpg`}
-                  alt={`Customer ${index}`}
-                  width={50}
-                  height={50}
-                  className="rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="font-semibold">Kunde {index}</h3>
-                  <p className="text-sm text-gray-600">Unternehmen {index}</p>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                &quot;Potera hat unsere Erwartungen übertroffen. Die Reinigungsqualität ist erstklassig, und das Team ist stets professionell und zuverlässig.&quot;
-              </p>
-            </div>
-          ))}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-semibold mb-4 flex items-center">
+              <Image src="/icons/check-red.svg" alt="Check" width={24} height={24} className="mr-2" />
+              Erprobte und professionelle Reinigung
+            </h3>
+            <p className="text-gray-700">
+              Wir garantieren Ihnen eine erstklassige Reinigungserfahrung. Unser Team besteht aus erfahrenen und professionellen Reinigungsexperten, die sich bemühen, Ihre Räume sauber und hygienisch zu halten.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-semibold mb-4 flex items-center">
+              <Image src="/icons/check-red.svg" alt="Check" width={24} height={24} className="mr-2" />
+              Qualitätsgarantie
+            </h3>
+            <p className="text-gray-700">
+              Wir sind stolz auf unsere Arbeit und garantieren Ihnen eine Reinigung von höchster Qualität. Wenn Sie nicht zufrieden sind, arbeiten wir mit Ihnen zusammen, um sicherzustellen, dass Ihre Anforderungen erfüllt werden.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-semibold mb-4 flex items-center">
+              <Image src="/icons/check-red.svg" alt="Check" width={24} height={24} className="mr-2" />
+              Verbindliche Dienstleistungen
+            </h3>
+            <p className="text-gray-700">
+              Wir bieten Ihnen verbindliche und zuverlässige Dienstleistungen an. Unser Team ist immer pünktlich und bereit, Ihre Reinigungsbedürfnisse zu erfüllen.
+            </p>
+          </div>
         </div>
       </section>
     </div>
