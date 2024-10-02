@@ -72,8 +72,12 @@ const ContactPage: React.FC = () => {
           <div className="flex flex-col mb-8" >
             <p className="mr-8 mb-4 text-white">
               <a className="flex items-center" href="tel:+4917632747881">
+              <Image src="/icons/mobile.svg" alt="Mobile" width={20} height={20} className="mr-2 invert" />
+              +49 176 3274 7881
+              </a>
+              <a className="flex items-center" href="tel:+49092213950562">
                 <PhoneIcon className="h-5 w-5 text-white mr-2" />
-                +49 176 3274 7881
+                +49 0922139 50562
               </a>
             </p>
         {/*     <p className="mr-8 mb-4 flex items-center text-white">
