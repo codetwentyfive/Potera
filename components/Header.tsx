@@ -1,16 +1,37 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 import ContactInfo from './ContactInfo';
+import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hash, setHash] = useState<string>('');
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Function to update the hash state
+    const handleHashChange = () => {
+      setHash(window.location.hash);
+    };
+
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Initialize hash state on component mount
+    handleHashChange();
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [pathname]);
 
   const navItems = [
-    { label: 'Home', href: '/' },
+    { label: 'Startseite', href: '/' },
     { label: 'Über uns', href: '/about' },
     { label: 'Dienstleistungen', href: '/#services' },
     { label: 'Kontakt', href: '/contact' },
@@ -40,21 +61,45 @@ const Header: React.FC = () => {
 
           {/* Right Section: Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              let isActive = false;
+
+              if (item.href === '/') {
+                // "Startseite" is active only when pathname is '/' and no hash
+                isActive = pathname === '/' && hash === '';
+              } else if (item.href === '/#services') {
+                // "Dienstleistungen" is active when pathname is '/' and hash is '#services'
+                isActive = pathname === '/' && hash === '#services';
+              } else {
+                // Other links are active based on the pathname
+                isActive = pathname === item.href;
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative text-gray-700 hover:text-blue-600 transition-colors duration-300 ${
+                    isActive ? 'text-blue-600' : ''
+                  }`}
+                >
+                  {item.label}
+                  {/* Underline for active and hover states */}
+                  <span
+                    className={`absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600 transform transition-transform duration-300 
+                      ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100 origin-left'}
+                    `}
+                  ></span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-500 hover:text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Mobile Menu"
           >
             <svg
               className="h-6 w-6"
