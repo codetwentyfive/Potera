@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   return (
-        <section id="hero"className="relative flex items-center justify-center py-16 pt-32">
+        <section id="hero"className="relative flex items-center justify-center py-16 pt-18">
       {/* Background Image */}
       <div className="absolute inset-0  ">
         <div className="absolute inset-0 bg-[#45b0e5] "></div>
