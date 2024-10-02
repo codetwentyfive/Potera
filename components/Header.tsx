@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                 alt="Potera"
                 width={80}
                 height={80}
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-[80px] md:h-[80px]"
+                className="w-14 h-14 sm:w-20 sm:h-20 md:w-[80px] md:h-[80px]"
               />
             </Link>
           </div>
