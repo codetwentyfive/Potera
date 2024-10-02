@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PhoneIcon, MailIcon } from "@heroicons/react/outline";
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mt-12">
@@ -18,8 +19,14 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center space-y-4 text-black">
           <p className="text-xl font-bold text-white">Rufen Sie uns an unter:</p>
           <a className="flex items-center" href="tel:+4917632747881">
-            <PhoneIcon className="h-5 w-5 mr-2" />
+          <Image src="/icons/mobile.svg" alt="Mobile" width={20} height={20} className="mr-2" />
+
             +49 176 3274 7881
+          </a>
+          <a className="flex items-center" href="tel:+49092213950562">
+            <PhoneIcon className="h-5 w-5 mr-2" />
+            
+            +49 09221 3950562
           </a>
           <p className="text-xl font-bold text-white">oder schreiben Sie uns eine E-Mail:</p>
           <a
