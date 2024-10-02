@@ -23,10 +23,9 @@ const Footer: React.FC = () => {
 
             +49 176 3274 7881
           </a>
-          <a className="flex items-center" href="tel:+49092213950562">
+          <a className="flex items-center" href="tel:+4992213950562">
             <PhoneIcon className="h-5 w-5 mr-2" />
-            
-            +49 09221 3950562
+            +49 9221 39 50562
           </a>
           <p className="text-xl font-bold text-white">oder schreiben Sie uns eine E-Mail:</p>
           <a

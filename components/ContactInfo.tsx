@@ -9,9 +9,9 @@ const ContactInfo: React.FC = () => {
         <Image src="/icons/mobile.svg" alt="Mobile" width={16} height={16} className="mr-1" />
         +49 176 3274 7881
       </a>
-      <a className="flex items-center text-gray-700 hover:text-blue-600" href="tel:+49092213950562">
+      <a className="flex items-center text-gray-700 hover:text-blue-600" href="tel:+4992213950562">
         <PhoneIcon className="h-4 w-4 mr-1" />
-        +49 0922139 50562
+        +49 9221 39 50562
       </a>
       <a className="flex items-center text-gray-700 hover:text-blue-600" href="mailto:kontakt@poterareinigung.de">
         <MailIcon className="h-4 w-4 mr-1" />
