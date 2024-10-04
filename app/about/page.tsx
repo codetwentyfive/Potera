@@ -31,9 +31,10 @@ const AboutPage: React.FC = () => {
   }, []); // No dependencies needed
 
   const experiences = [
-    { year: 2016, company: 'Edeka' },
-    { year: 2019, company: 'Kaufland' },
-    { year: 2020, company: 'Aldi' },
+    {  company: 'Edeka' },
+    {  company: 'Karstadt' },
+    {  company: 'Kaufland' },
+    {  company: 'Aldi' },
   ];
 
   return (
@@ -83,7 +84,7 @@ const AboutPage: React.FC = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="mb-8 flex">
               <div className="w-24 text-right mr-4">
-                <span className="font-bold">{exp.year}</span>
+              {/*   <span className="font-bold">{exp.year}</span> */}
               </div>
               <div className="w-px bg-blue-500 relative">
                 <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-1 top-1.5"></div>
