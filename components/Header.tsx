@@ -13,18 +13,13 @@ const Header: React.FC = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Function to update the hash state
     const handleHashChange = () => {
       setHash(window.location.hash);
     };
 
-    // Add event listener for hash changes
     window.addEventListener('hashchange', handleHashChange);
-
-    // Initialize hash state on component mount
     handleHashChange();
 
-    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
@@ -38,7 +33,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <header role="banner" className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
         {/* Contact Info (hidden on mobile) */}
         <div className="hidden md:block py-1">
@@ -48,10 +43,10 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-4 sm:pb-4 sm:pt-0 ">
           {/* Left Section: Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" aria-label="Home">
               <Image
                 src="/images/logo.svg"
-                alt="Potera"
+                alt="Potera Logo"
                 width={80}
                 height={80}
                 className="w-14 h-14 sm:w-20 sm:h-20 md:w-[80px] md:h-[80px]"
@@ -60,7 +55,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Right Section: Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6" aria-label="Main Navigation">
             {navItems.map((item) => {
               let isActive = false;
 
@@ -82,6 +77,7 @@ const Header: React.FC = () => {
                   className={`relative text-gray-700 hover:text-blue-600 transition-colors duration-300 ${
                     isActive ? 'text-blue-600' : ''
                   }`}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.label}
                   {/* Underline for active and hover states */}
@@ -89,6 +85,7 @@ const Header: React.FC = () => {
                     className={`absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600 transform transition-transform duration-300 
                       ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100 origin-left'}
                     `}
+                    aria-hidden="true"
                   ></span>
                 </Link>
               );
@@ -100,6 +97,7 @@ const Header: React.FC = () => {
             className="md:hidden text-gray-500 hover:text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Mobile Menu"
+            aria-expanded={isMenuOpen}
           >
             <svg
               className="h-6 w-6"
@@ -132,5 +130,6 @@ const Header: React.FC = () => {
     </header>
   );
 };
+
 
 export default Header;

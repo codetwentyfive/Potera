@@ -5,7 +5,7 @@ import { PhoneIcon, MailIcon } from "@heroicons/react/outline";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mt-12">
+    <footer role="contentinfo" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mt-12">
       <div className="container mx-auto py-12 text-center space-y-6">
         <h2 className="text-3xl font-bold">
           Lassen Sie Ihr Zuhause reinigen. Es ist einfach und erschwinglich.
@@ -18,21 +18,21 @@ const Footer: React.FC = () => {
         </Link>
         <div className="flex flex-col items-center space-y-4 text-black">
           <p className="text-xl font-bold text-white">Rufen Sie uns an unter:</p>
-          <a className="flex items-center" href="tel:+4917632747881">
-          <Image src="/icons/mobile.svg" alt="Mobile" width={20} height={20} className="mr-2" />
-
+          <a className="flex items-center" href="tel:+4917632747881" aria-label="Mobile phone number">
+            <Image src="/icons/mobile.svg" alt="" width={20} height={20} className="mr-2" aria-hidden="true" />
             +49 176 3274 7881
           </a>
-          <a className="flex items-center" href="tel:+4992213950562">
-            <PhoneIcon className="h-5 w-5 mr-2" />
+          <a className="flex items-center" href="tel:+4992213950562" aria-label="Landline phone number">
+            <PhoneIcon className="h-5 w-5 mr-2" aria-hidden="true" />
             +49 9221 39 50562
           </a>
           <p className="text-xl font-bold text-white">oder schreiben Sie uns eine E-Mail:</p>
           <a
             className="flex items-center"
             href="mailto:kontakt@poterareinigung.de"
+            aria-label="Email address"
           >
-            <MailIcon className="h-5 w-5  mr-2" />
+            <MailIcon className="h-5 w-5 mr-2" aria-hidden="true" />
             kontakt@poterareinigung.de
           </a>
         </div>
@@ -52,11 +52,10 @@ const Footer: React.FC = () => {
               </Link>
             </li>
           </ul>
-          {/* Logo in Footer */}
           <div className="mt-4 md:mt-0">
             <Image
               src="/icons/logo-footer.svg"
-              alt="Potera"
+              alt="Potera Logo"
               width={60}
               height={50}
             />
