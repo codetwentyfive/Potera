@@ -52,13 +52,16 @@ const Footer: React.FC = () => {
               </Link>
             </li>
           </ul>
-          <div className="mt-4 md:mt-0">
+          <div className="mt-4 md:mt-0 flex items-center">
             <Image
               src="/icons/logo-footer.svg"
               alt="Potera Logo"
               width={60}
               height={50}
             />
+            <span className="ml-2 text-xs">
+              Website by <a href="http://www.chingis.dev" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Chingis Zwecker E.</a>
+            </span>
           </div>
         </div>
       </div>
