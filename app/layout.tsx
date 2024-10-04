@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Potera Reinigungsdienste',
-  description: 'Professional cleaning services',
+  description: 'Professionelle Reinigungsdienste in der Nähe von Bamberg und Umgebung',
   icons: {
     icon: '/images/logo.svg',
   },
