@@ -161,3 +161,16 @@ p {
 }
 
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
+@keyframes spin-wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-wheel {
+  animation: spin-wheel 20s linear infinite;
+}
