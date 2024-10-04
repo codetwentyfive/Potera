@@ -14,9 +14,9 @@ const AboutPage: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            currentRef.classList.add('animate-rotate');
+            currentRef.classList.add('animate-spin-wheel');
           } else {
-            currentRef.classList.remove('animate-rotate');
+            currentRef.classList.remove('animate-spin-wheel');
           }
         });
       },
@@ -57,17 +57,17 @@ const AboutPage: React.FC = () => {
               {[1, 2, 3, 4].map((index) => (
                 <div
                   key={index}
-                  className="absolute w-full h-full transition-all duration-1000"
+                  className="absolute w-24 h-24"
                   style={{
-                    transform: `rotate(${(index - 1) * 90}deg)`,
+                    transform: `rotate(${(index - 1) * 90}deg) translateY(-100px)`,
                     transformOrigin: 'center center',
                   }}
                 >
                   <Image
-                    src={`/images/about-${index}.jpg`}
-                    alt={`About us ${index}`}
-                    layout="fill"
-                    objectFit="cover"
+                    src={`/images/text(${index}).svg`}
+                    alt={`Text ${index}`}
+                    width={96} // Adjusted width
+                    height={96} // Adjusted height
                     className="rounded-lg"
                   />
                 </div>
@@ -78,7 +78,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 headline-right pr-2">Unsere Erfahrungen</h2>
+        <h2 className="text-3xl font-bold mb-8 headline pl-2">Unsere Erfahrungen</h2>
         <div className="relative">
           {experiences.map((exp, index) => (
             <div key={index} className="mb-8 flex">
