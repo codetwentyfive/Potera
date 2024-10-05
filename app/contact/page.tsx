@@ -1,12 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import {
-  PhoneIcon,
-  MailIcon,
- /*  PrinterIcon, */
-} from '@heroicons/react/outline';
-import Image from 'next/image'; 
+import { PhoneIcon, MailIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Modal from '../../components/Modal';
 
 const ContactPage: React.FC = () => {
   // Form state
@@ -16,11 +13,38 @@ const ContactPage: React.FC = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for success modal
+
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement form submission logic
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setIsModalOpen(true); // Open success modal
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -145,9 +169,10 @@ const ContactPage: React.FC = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white p-3 rounded"
+              className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 disabled:opacity-50"
+              disabled={isSubmitting}
             >
-              Nachricht abschicken
+              {isSubmitting ? 'Wird gesendet...' : 'Nachricht abschicken'}
             </button>
           </form>
         </div>
@@ -182,6 +207,24 @@ const ContactPage: React.FC = () => {
           In Google Maps öffnen
         </a>
       </div>
+
+      {/* Success Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Erfolg"
+      >
+        <p className="text-green-500">Ihre Nachricht wurde erfolgreich gesendet!</p>
+      </Modal>
+
+      {/* Error Modal */}
+      <Modal
+        isOpen={submitStatus === 'error'}
+        onClose={() => setSubmitStatus(null)}
+        title="Fehler"
+      >
+        <p className="text-red-500">Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.</p>
+      </Modal>
     </section>
   );
 };
