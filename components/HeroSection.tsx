@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
             Über 25 Jahre Erfahrung im Reinigungs<br className="md:hidden"  />service {/* Added line break for smaller screens */}
           </h1>
           <p className="text-lg md:text-xl mb-6">
-            Wir bieten professionelle Reinigungsdienste für Ihr Zuhause und Büro mit Fokus auf Qualität und Kundenzufriedenheit.
+            Wir bieten professionelle Reinigungsdienste mit einem Fokus auf Qualität und Kundenzufriedenheit.
           </p>
           <div className="flex justify-center  md:justify-start space-x-4">
             <Link href="/contact" className="btn btn-primary">
