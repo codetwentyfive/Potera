@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
   return (
     <footer role="contentinfo" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mt-12">
       <div className="container mx-auto py-12 text-center space-y-6">
-        <h2 className="text-3xl font-bold">
-          Lassen Sie Ihr Zuhause reinigen. Es ist einfach und erschwinglich.
+        <h2 className="text-3xl font-bold text-white">
+          Lassen Sie Ihre Flächen reinigen. Es ist einfach und erschwinglich.
         </h2>
         <Link
           href="/contact"
