@@ -42,27 +42,25 @@ const services: Service[] = [
 // ServiceCard Component
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8" role="listitem">
-      <div className="bg-blue-600 p-8 rounded-lg shadow-lg flex flex-col h-full relative overflow-hidden group transition-transform duration-300 ease-in-out hover:scale-105">
-        <div className="relative z-10">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 mr-2">
-              {typeof service.icon === "string" ? (
-                <Image
-                  src={service.icon}
-                  alt=""
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                  aria-hidden="true"
-                />
-              ) : (
-                <div className="text-white text-4xl" aria-hidden="true">{service.icon}</div>
-              )}
-            </div>
-            <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+    <div className="w-full sm:w-1/2 lg:w-1/3 p-4" role="listitem">
+      <div className="bg-blue-600 p-6 rounded-lg shadow-lg h-full relative overflow-hidden group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="relative z-10 flex flex-col items-center text-center">
+          <div className="w-12 h-12 mb-3">
+            {typeof service.icon === "string" ? (
+              <Image
+                src={service.icon}
+                alt=""
+                width={48}
+                height={48}
+                className="object-contain"
+                aria-hidden="true"
+              />
+            ) : (
+              <div className="text-white text-4xl" aria-hidden="true">{service.icon}</div>
+            )}
           </div>
-          <p className="mb-6 flex-grow text-white text-opacity-90">{service.description}</p>
+          <h3 className="text-xl font-bold text-white leading-tight mb-3">{service.title}</h3>
+          <p className="text-white text-opacity-90 leading-relaxed">{service.description}</p>
         </div>
       </div>
     </div>
@@ -71,9 +69,9 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="py-12 section">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 animate-slide-in-left">
+    <section id="services" className="py-16 section">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 animate-slide-in-left font-montserrat">
           Unsere Dienstleistungen
         </h2>
         <div className="flex flex-wrap justify-center -mx-4 animate-slide-in-right">
