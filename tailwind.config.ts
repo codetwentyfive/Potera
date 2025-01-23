@@ -19,6 +19,10 @@ const config: Config = {
           "2xl": "1400px",
         },
       },
+      fontFamily: {
+        montserrat: ['var(--font-montserrat)'],
+        opensans: ['var(--font-opensans)'],
+      },
     },
   },
   plugins: [],
