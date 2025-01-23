@@ -160,8 +160,6 @@ p {
   transform: scale(1.1); /* Scale up on hover */
 }
 
-@import '~@fortawesome/fontawesome-free/css/all.css';
-
 @keyframes spin-wheel {
   from {
     transform: rotate(0deg);
