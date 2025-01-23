@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </h2>
         <Link
           href="/contact"
-          className="btn btn-secondary bg-white text-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 transition-colors duration-300 inline-block"
+          className="btn btn-primary bg-white  inline-block"
         >
           Angebot einholen
         </Link>

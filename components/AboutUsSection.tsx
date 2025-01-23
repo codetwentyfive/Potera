@@ -30,7 +30,7 @@ const AboutUsSection: React.FC = () => {
               Qualitätsdienste
             </li>
           </ul>
-          <Link href="/about" className="btn btn-secondary">
+          <Link href="/about" className="btn btn-primary">
             Mehr erfahren
           </Link>
         </div>
