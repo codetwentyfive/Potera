@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
+import React from 'react';
 
 type Props = {
-  params: {
-    location: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
+  params: { location: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
+/*
 interface Location {
   name: string;
   title: string;
@@ -67,7 +66,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: Props
+    { params }: Props
 ): Promise<Metadata> {
   const location = locations[params.location];
 
@@ -114,84 +113,12 @@ export async function generateMetadata(
   };
 }
 
-export default function LocationPage({ params }: Props) {
-  const location = locations[params.location];
-
-  if (!location) {
-    return (
-      <div className="container mx-auto py-16">
-        <h1 className="text-4xl font-bold mb-8">Seite nicht gefunden</h1>
-        <p>Die angeforderte Seite existiert nicht.</p>
-      </div>
-    );
-  }
-
+export default function LocationPage({ params }: Props): React.JSX.Element {
   return (
     <div className="container mx-auto py-16">
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-8 headline pl-2 font-montserrat">
-          {location.title}
-        </h1>
-        <div className="flex flex-wrap items-center">
-          <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-            <p className="text-lg mb-6 font-opensans">
-              {location.description}
-            </p>
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 font-montserrat">
-                Unsere Services in {location.name}:
-              </h2>
-              <ul className="list-disc pl-6 space-y-2 font-opensans">
-                {location.services.map((service) => (
-                  <li key={service}>{service}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 font-montserrat">
-                Servicegebiete um {location.name}:
-              </h2>
-              <ul className="list-disc pl-6 space-y-2 font-opensans">
-                {location.areas.map((area) => (
-                  <li key={area}>{area}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 pl-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 font-montserrat">
-                Kontaktieren Sie uns in {location.name}
-              </h3>
-              <p className="mb-4 font-opensans">
-                Wir sind Ihr lokaler Ansprechpartner für professionelle Reinigungsdienstleistungen in {location.name} und Umgebung.
-              </p>
-              <div className="space-y-4">
-                <p className="flex items-center font-opensans">
-                  <Image
-                    src="/icons/mobile.svg"
-                    alt="Telefon"
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                  />
-                  +49 176 3274 7881
-                </p>
-                <p className="flex items-center font-opensans">
-                  <Image
-                    src="/icons/email.svg"
-                    alt="Email"
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                  />
-                  kontakt@poterareinigung.de
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <h1 className="text-4xl font-bold mb-8">Under Construction</h1>
+      <p>This page is currently being updated.</p>
     </div>
   );
 }
+*/

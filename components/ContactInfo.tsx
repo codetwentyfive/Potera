@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneIcon, MailIcon } from '@heroicons/react/outline';
+import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 
 const ContactInfo: React.FC = () => {
@@ -14,7 +14,7 @@ const ContactInfo: React.FC = () => {
         +49 9221 39 50562
       </a>
       <a className="flex items-center text-gray-700 hover:text-blue-600" href="mailto:kontakt@poterareinigung.de" aria-label="Email address">
-        <MailIcon className="h-4 w-4 mr-1 text-red-500" aria-hidden="true" />
+        <EnvelopeIcon className="h-4 w-4 mr-1 text-red-500" aria-hidden="true" />
         kontakt@poterareinigung.de
       </a>
     </div>

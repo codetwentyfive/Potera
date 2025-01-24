@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { PhoneIcon, MailIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Modal from '../../components/Modal';
 
@@ -93,27 +92,20 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col mb-8" >
+          <div className="flex flex-col mb-8">
             <p className="mr-8 mb-4 text-white">
               <a className="flex items-center" href="tel:+4917632747881">
-              <Image src="/icons/mobile.svg" alt="Mobile" width={20} height={20} className="mr-2 invert" />
-              +49 176 3274 7881
+                <Image src="/icons/mobile.svg" alt="Mobile" width={20} height={20} className="mr-2 invert" />
+                +49 176 3274 7881
               </a>
               <a className="flex items-center" href="tel:+4992213950562">
-                <PhoneIcon className="h-5 w-5 text-white mr-2" />
+                <Image src="/icons/phone.svg" alt="Phone" width={20} height={20} className="mr-2 invert" />
                 +49 9221 39 50562
               </a>
             </p>
-        {/*     <p className="mr-8 mb-4 flex items-center text-white">
-              <PrinterIcon className="h-5 w-5 text-white mr-2" />
-              +49 123 456 789
-            </p> */}
             <p className="mb-4">
-              <a
-                className="flex items-center text-white"
-                href="mailto:kontakt@poterareinigung.de"
-              >
-                <MailIcon className="h-5 w-5  mr-2 text-white" />
+              <a className="flex items-center text-white" href="mailto:kontakt@poterareinigung.de">
+                <Image src="/icons/envelope.svg" alt="Email" width={20} height={20} className="mr-2 invert" />
                 kontakt@poterareinigung.de
               </a>
             </p>
