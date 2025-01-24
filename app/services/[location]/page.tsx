@@ -4,7 +4,6 @@ import Image from 'next/image';
 // Define the correct types for Next.js pages
 type Props = {
   params: { location: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 interface Location {
