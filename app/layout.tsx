@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import JsonLd from './components/JsonLd';
-import {Montserrat, Open_Sans } from 'next/font/google';
-import { Analytics } from "@vercel/analytics/react"
+import { Montserrat, Open_Sans } from 'next/font/google';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
 // Initialize fonts
 const montserrat = Montserrat({
@@ -115,7 +115,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {children}
         </main>
         <Footer />
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
