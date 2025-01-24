@@ -1,6 +1,12 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
+// Define the correct types for Next.js pages
+type Props = {
+  params: { location: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 interface Location {
   name: string;
   title: string;
@@ -60,10 +66,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: { params: { location: string } }
+  { params }: Props
 ): Promise<Metadata> {
   const location = locations[params.location];
-  
+
   if (!location) {
     return {
       title: 'Seite nicht gefunden | Potera Reinigungsdienste',
@@ -77,7 +83,7 @@ export async function generateMetadata(
     `Reinigungsservice ${area}`
   ]).flat();
 
-  const serviceKeywords = location.services.map(service => 
+  const serviceKeywords = location.services.map(service =>
     `${service} ${location.name}`
   );
 
@@ -107,7 +113,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function LocationPage({ params }: { params: { location: string } }) {
+export default async function LocationPage({ params }: Props) {
   const location = locations[params.location];
 
   if (!location) {
@@ -161,22 +167,22 @@ export default async function LocationPage({ params }: { params: { location: str
               </p>
               <div className="space-y-4">
                 <p className="flex items-center font-opensans">
-                  <Image 
-                    src="/icons/mobile.svg" 
-                    alt="Telefon" 
-                    width={20} 
-                    height={20} 
-                    className="mr-2" 
+                  <Image
+                    src="/icons/mobile.svg"
+                    alt="Telefon"
+                    width={20}
+                    height={20}
+                    className="mr-2"
                   />
                   +49 176 3274 7881
                 </p>
                 <p className="flex items-center font-opensans">
-                  <Image 
-                    src="/icons/email.svg" 
-                    alt="Email" 
-                    width={20} 
-                    height={20} 
-                    className="mr-2" 
+                  <Image
+                    src="/icons/email.svg"
+                    alt="Email"
+                    width={20}
+                    height={20}
+                    className="mr-2"
                   />
                   kontakt@poterareinigung.de
                 </p>
@@ -187,4 +193,4 @@ export default async function LocationPage({ params }: { params: { location: str
       </section>
     </div>
   );
-} 
+}

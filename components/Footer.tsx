@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { PhoneIcon, MailIcon } from "@heroicons/react/outline";
+import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const Footer: React.FC = () => {
   return (
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             href="mailto:kontakt@poterareinigung.de"
             aria-label="Email address"
           >
-            <MailIcon className="h-5 w-5 mr-2" aria-hidden="true" />
+            <EnvelopeIcon className="h-5 w-5 mr-2" aria-hidden="true" />
             kontakt@poterareinigung.de
           </a>
         </div>
