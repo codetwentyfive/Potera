@@ -1,15 +1,19 @@
-import React from 'react';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
-interface PageProps {
-  params: {
-    location: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
+interface Location {
+  name: string;
+  title: string;
+  description: string;
+  services: string[];
+  areas: string[];
 }
 
-const locations = {
+interface Locations {
+  [key: string]: Location;
+}
+
+const locations: Locations = {
   kulmbach: {
     name: 'Kulmbach',
     title: 'Reinigungsdienste in Kulmbach',
@@ -46,26 +50,33 @@ const locations = {
       'Fensterreinigung'
     ],
     areas: ['Stadtgebiet Bayreuth', 'Bindlach', 'Gesees', 'Heinersreuth', 'Eckersdorf']
-  },
-  // Add more locations as needed
+  }
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const location = locations[params.location as keyof typeof locations];
-  
-  if (!location) return {
-    title: 'Seite nicht gefunden',
-    description: 'Die angeforderte Seite existiert nicht.'
-  };
+export async function generateStaticParams() {
+  return Object.keys(locations).map((location) => ({
+    location,
+  }));
+}
 
-  // Create area-specific keywords
+export async function generateMetadata(
+  { params }: { params: { location: string } }
+): Promise<Metadata> {
+  const location = locations[params.location];
+  
+  if (!location) {
+    return {
+      title: 'Seite nicht gefunden | Potera Reinigungsdienste',
+      description: 'Die angeforderte Seite existiert nicht.'
+    };
+  }
+
   const areaKeywords = location.areas.map(area => [
     `Reinigungsdienst ${area}`,
     `Gebäudereinigung ${area}`,
     `Reinigungsservice ${area}`
   ]).flat();
 
-  // Create service-specific keywords
   const serviceKeywords = location.services.map(service => 
     `${service} ${location.name}`
   );
@@ -96,8 +107,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function LocationPage({ params }: PageProps) {
-  const location = locations[params.location as keyof typeof locations];
+export default async function LocationPage({ params }: { params: { location: string } }) {
+  const location = locations[params.location];
 
   if (!location) {
     return (
@@ -120,7 +131,9 @@ export default function LocationPage({ params }: PageProps) {
               {location.description}
             </p>
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 font-montserrat">Unsere Services in {location.name}:</h2>
+              <h2 className="text-2xl font-semibold mb-4 font-montserrat">
+                Unsere Services in {location.name}:
+              </h2>
               <ul className="list-disc pl-6 space-y-2 font-opensans">
                 {location.services.map((service) => (
                   <li key={service}>{service}</li>
@@ -128,7 +141,9 @@ export default function LocationPage({ params }: PageProps) {
               </ul>
             </div>
             <div>
-              <h2 className="text-2xl font-semibold mb-4 font-montserrat">Servicegebiete um {location.name}:</h2>
+              <h2 className="text-2xl font-semibold mb-4 font-montserrat">
+                Servicegebiete um {location.name}:
+              </h2>
               <ul className="list-disc pl-6 space-y-2 font-opensans">
                 {location.areas.map((area) => (
                   <li key={area}>{area}</li>
@@ -138,17 +153,31 @@ export default function LocationPage({ params }: PageProps) {
           </div>
           <div className="w-full lg:w-1/2 pl-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 font-montserrat">Kontaktieren Sie uns in {location.name}</h3>
+              <h3 className="text-xl font-semibold mb-4 font-montserrat">
+                Kontaktieren Sie uns in {location.name}
+              </h3>
               <p className="mb-4 font-opensans">
                 Wir sind Ihr lokaler Ansprechpartner für professionelle Reinigungsdienstleistungen in {location.name} und Umgebung.
               </p>
               <div className="space-y-4">
                 <p className="flex items-center font-opensans">
-                  <Image src="/icons/mobile.svg" alt="Telefon" width={20} height={20} className="mr-2" />
+                  <Image 
+                    src="/icons/mobile.svg" 
+                    alt="Telefon" 
+                    width={20} 
+                    height={20} 
+                    className="mr-2" 
+                  />
                   +49 176 3274 7881
                 </p>
                 <p className="flex items-center font-opensans">
-                  <Image src="/icons/email.svg" alt="Email" width={20} height={20} className="mr-2" />
+                  <Image 
+                    src="/icons/email.svg" 
+                    alt="Email" 
+                    width={20} 
+                    height={20} 
+                    className="mr-2" 
+                  />
                   kontakt@poterareinigung.de
                 </p>
               </div>
@@ -158,10 +187,4 @@ export default function LocationPage({ params }: PageProps) {
       </section>
     </div>
   );
-}
-
-export function generateStaticParams() {
-  return Object.keys(locations).map((location) => ({
-    location,
-  }));
 } 
