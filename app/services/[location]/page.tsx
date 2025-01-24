@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-interface PageProps {
+type Props = {
   params: {
     location: string;
   };
-}
+  searchParams: Record<string, string | string[] | undefined>;
+};
 
 interface Location {
   name: string;
@@ -66,7 +67,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: PageProps
+  { params }: Props
 ): Promise<Metadata> {
   const location = locations[params.location];
 
@@ -113,7 +114,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function LocationPage({ params }: PageProps) {
+export default function LocationPage({ params }: Props) {
   const location = locations[params.location];
 
   if (!location) {
