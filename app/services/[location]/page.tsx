@@ -2,9 +2,12 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-type Props = {
-  params: { location: string }
-};
+interface PageProps {
+  params: {
+    location: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
 const locations = {
   kulmbach: {
@@ -47,7 +50,7 @@ const locations = {
   // Add more locations as needed
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const location = locations[params.location as keyof typeof locations];
   
   if (!location) return {
@@ -93,7 +96,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LocationPage({ params }: Props) {
+export default function LocationPage({ params }: PageProps) {
   const location = locations[params.location as keyof typeof locations];
 
   if (!location) {
