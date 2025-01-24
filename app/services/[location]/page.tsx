@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-// Define the correct types for Next.js pages
-type Props = {
-  params: { location: string };
-};
+interface PageProps {
+  params: {
+    location: string;
+  };
+}
 
 interface Location {
   name: string;
@@ -65,7 +66,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: Props
+  { params }: PageProps
 ): Promise<Metadata> {
   const location = locations[params.location];
 
@@ -112,7 +113,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function LocationPage({ params }: Props) {
+export default async function LocationPage({ params }: PageProps) {
   const location = locations[params.location];
 
   if (!location) {
